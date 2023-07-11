@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PlaneRepository extends JpaRepository<Plane,Long>{
-    List<Plane> findAllByModel(String model);
+
 }

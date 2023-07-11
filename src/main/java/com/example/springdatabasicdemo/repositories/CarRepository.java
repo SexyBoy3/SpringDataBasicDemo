@@ -4,6 +4,7 @@ package com.example.springdatabasicdemo.repositories;
 
 
 
+import com.example.springdatabasicdemo.models.Bike;
 import com.example.springdatabasicdemo.models.Car;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,6 +14,6 @@ import java.util.List;
 
 @Repository
 public interface CarRepository extends JpaRepository<Car,Long>{
-    List<Car> findAllByModel(String model);
+    List<Car> findAllById(Long id);
 }
 

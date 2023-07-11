@@ -1,9 +1,10 @@
 package com.example.springdatabasicdemo;
 
-import com.example.springdatabasicdemo.models.Group;
-import com.example.springdatabasicdemo.models.Student;
-import com.example.springdatabasicdemo.repositories.GroupRepository;
-import com.example.springdatabasicdemo.repositories.StudentRepository;
+
+import com.example.springdatabasicdemo.models.Car;
+import com.example.springdatabasicdemo.repositories.BikeRepository;
+
+import com.example.springdatabasicdemo.repositories.CarRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -12,12 +13,12 @@ import java.io.IOException;
 @Component
 public class CommandLineRunnerImpl implements CommandLineRunner {
 
-    private final GroupRepository groupRepository;
-    private final StudentRepository studentRepository;
+    private final BikeRepository bikeRepository;
+    private final CarRepository carRepository;
 
-    public CommandLineRunnerImpl(GroupRepository groupRepository, StudentRepository studentRepository) {
-        this.groupRepository = groupRepository;
-        this.studentRepository = studentRepository;
+    public CommandLineRunnerImpl(BikeRepository bikeRepository, CarRepository carRepository) {
+        this.bikeRepository = bikeRepository;
+        this.carRepository = carRepository;
     }
 
     @Override
@@ -30,9 +31,9 @@ public class CommandLineRunnerImpl implements CommandLineRunner {
 
     }
 
-    private void printAllStudentsByGroupName(String groupName) {
-        studentRepository
-                .findAllByGroupName(groupName)
+    private void printAllCarsById(Long id) {
+        CarRepository
+                .findAllById(id)
                 .forEach(System.out::println);
     }
 
